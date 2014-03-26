@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+    {Title}
+    {block:IndexPage}{block:Description} &ndash; {PlaintextDescription}{/block:Description}{/block:IndexPage}
+    {block:PermalinkPage}{block:PostSummary} &ndash; {PlaintextPostSummary}{/block:PostSummary}{block:PermalinkPage}
+    {block:SearchPage} &ndash; {lang:Search results for SearchQuery}{/block:SearchPage}
+    </title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    {block:PermalinkPage}
+    {block:Posts}
+    {block:Date}
+    <link rel="canonical" href="{Permalink}">
+    <link rel="shortlink" href="{ShortURL}">
+    {/block:Date}
+    {/block:Posts}
+    {/block:PermalinkPage}
+    <!-- Development CSS -->
+    	<!-- a link to the external css -->
+    <!-- Font CSS -->
+    	<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:700|Volkhov:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!-- Fav Icons -->
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <!-- Feed / Social Usernames -->
+    <meta name="text:Google Analytics ID" content=""/>
+    <!-- Theme Options -->
+    <meta name="if:Enable Twitter Feed" content="0" />
+    <meta name="if:Enable Google Analytics" content="0" />
+    <!-- Theme CSS -->
+    <style>
+    	/*
+			title-color:			#000000;
+			hightlight-alt-color:	#c3700c;
+			background-color:		#ffffff;
+			heading-color:			#222222;
+			paragraphy-color:		#545454;
+			divider-color:			#ededed;
+			quote-div-color:		#cccccc;
+			post-dets-color:		#b8b8b8;
+			aside-p-color:			#8c8c8c;
+		*/
+
+      /* ==========================================================================
+         CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
+         ========================================================================== */
+	      html, body, div, span, applet, object, iframe,
+	      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	      a, abbr, acronym, address, big, cite, code,
+	      del, dfn, em, img, ins, kbd, q, s, samp,
+	      small, strike, strong, sub, sup, tt, var,
+	      b, u, i, center,
+	      dl, dt, dd, ol, ul, li,
+	      fieldset, form, label, legend,
+	      table, caption, tbody, tfoot, thead, tr, th, td,
+	      article, aside, canvas, details, embed,
+	      figure, figcaption, footer, header, hgroup,
+	      menu, nav, output, ruby, section, summary,
+	      time, mark, audio, video {
+	        margin: 0;
+	        padding: 0;
+	        vertical-align: baseline;
+	        border: 0;
+	        font: inherit;
+	        font-size: 100%;
+	      }
+	      article, aside, details, figcaption, figure,
+	      footer, header, hgroup, menu, nav, section {
+	        display: block;
+	      }
+	      body {
+	        line-height: 1;
+	      }
+	      ol, ul {
+	        list-style: none;
+	      }
+	      blockquote, q {
+	        quotes: none;
+	      }
+	      blockquote:before, blockquote:after,
+	      q:before, q:after {
+	        content: '';
+	        content: none;
+	      }
+	      table {
+	        border-spacing: 0;
+	        border-collapse: collapse;
+	      }
+	      * {
+	        -webkit-box-sizing: border-box;
+	        -moz-box-sizing:    border-box;
+	        box-sizing:         border-box;
+	      }
+	      .clearfix:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+			}
+			* html .clearfix             { zoom: 1; } /* IE6 */
+			*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+      /* ==========================================================================
+         Base Typography
+         ========================================================================== */
+	      body {
+	      	font-size: 16px; // 1rem = 16px
+	      	font-family: 'Volkhov', times, serif; 
+	      	position:relative;
+	      	color: rgba(0, 0, 0, 1.0);
+	      }
+	      h1, h2, h3, h4, h5, h6 {
+	      	font-family: 'Old Standard TT', times, serif;
+	      	color: rgba(0, 0, 0, 1.0);
+	      }
+	      h1 {
+	      	font-size: 6rem;
+	      	text-align:  center;
+	      }
+	      h2 {
+	      	font-size: 3rem;
+	      	line-height: 38px;
+	      }
+	      p {
+	      	font-size: 0.75rem;
+	      	font-family: 'Volkhov', times, serif; 
+	      	line-height: 25px;
+	      	word-spacing: 0.02875rem;
+	      }
+	      ol, ul {
+	      	clear: both;
+	      }
+	      ul {
+	      	
+	      }
+	      blockquote {
+	      	padding-top: 25px;
+	      	padding-bottom: 20px;
+	      	font-size: 1.5rem;
+	      	text-align: center;
+	      	font-style: italic;
+	      	clear: both;
+	      }
+
+	      a {
+	      	color: rgba(0, 0, 0, 1.0);
+	      	font-style: bold;
+	      	text-decoration: none;
+	      }
+	      a:hover {
+	      	text-decoration: underline;
+	      }
+
+	      /* Header  */
+	      header h1 {
+	      	line-height: 7.25rem;
+	      	border-bottom: solid 1px rgb(151,151,151); 
+	      }
+	      .about p {
+	      	font-size: 0.6875rem;
+	      	line-height: 1.125rem;
+	      }
+      /* ==========================================================================
+         Base Layout
+         ========================================================================== */
+         header, main {
+         	margin-left: auto;
+         	margin-right: auto;
+         }
+         header h1, .about, nav ul, main {
+         	max-width: 700px;
+         	margin-left: auto;
+         	margin-right: auto;
+         }
+         header {
+         	margin-top: 53px;
+         }
+         .about {
+         	padding: 0 63px 0 63px;
+         	margin: 18px auto 38px auto;
+         } 
+         .about > img {
+         	max-width: 140px;
+         	float: left;
+         	padding: 4px;
+         	border: double 4px #000; 
+         }
+         .about > p {
+         	margin: 15px 0 0 39px;
+         	max-width: 393.6px;
+         	float: left;
+         }
+         nav {
+         	clear: both;
+         	margin: 36px 0 12px 0;
+         }
+         nav > ul {
+         	text-align: center;
+         }
+         nav > ul > li {
+         	display: inline-block;
+         	font-size: 0.6875rem;
+         	text-transform: uppercase;
+         	padding: 0 55px 0 0;
+         }
+         nav > ul > li > a {
+         	text-decoration: none;
+         	color: rgba(0, 0, 0, 1.0);
+         }
+         .head-divider {
+         	margin: 22px 0 20px 0;
+         	bottom: 1px;
+			width: 100%;
+			height: 1px;
+			background: rgb(74,74,74);
+			box-shadow: 0 15px 0 rgb(74,74,74);
+			clear: both;
+         }
+         .divider {
+         	margin: 22px auto 20px auto;
+         	bottom: 1px;
+			max-width: 273px;
+			height: 1px;
+			background: rgb(74,74,74);
+			box-shadow: 0 15px 0 rgb(74,74,74);
+			clear: both;
+         }
+         main {
+         	
+         }
+         main > article {
+         	padding: 0 63px 0 63px;
+         }
+         iframe {
+         	margin-left: 10%;
+         }
+
+	  /* ==========================================================================
+         Post Layout
+         ========================================================================== */
+         .post {
+         	
+         }
+         .post header {
+         	float: right;
+         	clear: both;
+         }
+         .post.text {
+
+         }
+         .post.text header, .post.chat header {
+         	float: right;
+         	clear: both;
+         }
+         .post.text h2, .post.chat h2 {
+         	float: left;
+         	clear: both;
+         	max-width: 400px;
+         	margin-bottom: 10px;
+         }
+         
+         .post p {
+         	margin: 20px 0 0 0px;
+         	clear: both;
+         }
+         .first p:first-child:first-letter {
+         	font-size: 3rem;
+         	line-height:15px;
+         	text-transform: uppercase;
+         	padding-top: 20px;
+         	padding-right: 6px;
+         	padding-bottom: 2px;
+         	float: left;
+         }
+         .post.audio {
+
+         }
+         .post .audio .tumblr_audio_player {
+         	max-width: 100%;
+         	margin: 0 auto 0 auto;
+         }
+         .post .video{
+         	
+         }
+         .post .chat ol, .post .chat ul{
+         	clear: both;
+         }
+         .post .chat .say{
+         	min-width: 200px;
+         }
+         .post .quote {
+         	clear: both;
+         }
+         .post .quote blockquote {
+         	margin-top: 10px;
+         	font-size: 1.5rem;
+         	font-style: italic;
+         	clear: both;
+         } 
+         .post .quote p .source {
+         	float: right;
+         	clear: both;
+         }
+         .post img {
+         	width: 100%;
+         }
+         .post header .like_button, .post header .reblog_button {
+         	float: left;
+         }
+         .post header .like_button {
+         	margin-left: 25px;
+         }
+         .post header .date {
+         	margin-bottom: 14px;
+         	font-size: 0.75rem;
+         	float: right;
+         }
+         .post header .date a {
+         	color: rgba(0, 0, 0, 1.0);
+         	text-decoration: none;
+         }
+         .post header .date a:hover {
+         	text-decoration: underline;
+         }
+         .post footer {
+         	margin: 23px 0 0 0; 
+         }
+         .post footer .readmore {
+         	float: right;
+         	margin-bottom: 10px;
+         }
+         .post footer .readmore li a {
+         	color: rgba(74, 74, 74, 1.0);
+         	font-size: 0.875rem;
+         	text-decoration: none;
+         }
+         .pots footer .readmore li a:hover {
+         	text-decoration: underline;
+         }
+         .post footer ul li a {
+         	font-size: 0.6875rem;
+         	text-decoration: none;
+         }
+         .post footer ul li a:hover {
+         	text-decoration: underline;
+         }
+         .post
+         .post footer ul {
+         	margin-bottom: 40px;
+         }
+
+         .end footer p {
+         	margin: 28px auto 15px auto;
+         	text-align: center;
+         }
+      /* ==========================================================================
+         Media Queries
+         ========================================================================== */
+	      @-ms-viewport { width: device-width; }
+	      @-o-viewport { width: device-width; }
+	      @viewport { width: device-width; }
+	      @media screen and (min-width:0px) {
+
+	      }
+    </style>
+    <!-- Custom CSS -->
+    <style>
+    {CustomCSS}
+    </style>
+  </head>
+  <body>
+  	
+  	<header>
+  		<h1>{Title}</h1>
+  		<section class="about clearfix">
+  			<img src="{PortraitURL-128}" alt="{Title}" class="avatar">
+  			{block:Description}
+  				<p class="description">{Description}</p>
+  			{/block:Description}
+  		</section>
+  		
+  		<nav>
+  		{block:HasPages}
+  			<ul>
+  			{block:Pages}
+  				<li><a href="{URL}">{label}</a></li>
+  			{/block:Pages}
+        	</ul>
+  		{/block:HasPages}
+  		</nav>
+  		
+  	</header>
+
+  	<div class="head-divider"></div>
+
+  	<main>
+  		{block:Posts}
+  			<article class="post {PostType}">
+
+  				<header>
+  					<ul>
+  					{block:Date}
+  					<li class="date"><a href="{Permalink}">{TimeAgo}</a></li>
+  					{/block:Date}	
+  					<li>{ReblogButton}{LikeButton}</li> 
+  					</ul>
+  				</header>
+
+  				{block:Photo}
+				<img src="{PhotoURL-500}" alt="{PhotoAlt}">
+				{block:Caption}
+				<div class="first">
+				{Caption}
+				</div>
+				{/block:Caption}
+  				{/block:Photo}
+
+  				{block:Text}
+				{block:Title}
+				<h2>{Title}</h2>
+				{/block:Title}
+				<div class="first">
+				{Body}
+				</div>
+  				{/block:Text}
+
+  				{block:Quote}
+  				<blockquote class="{Length}">
+  				{Quote}
+  				</blockquote>
+  				{block:Source}
+  				<p class="source">- {Source}</p>
+  				{/block:Source}
+  				{/block:Quote}
+
+  				{block:Chat}
+  				{block:Title}
+  				<h2>{Title}</h2>
+  				{/block:Title}
+  				<ol class="clearfix">
+  					{block:Lines}
+  					<li class="{Alt}">
+  						{block:Label}
+  						<span>{Label}</span> 
+  						{/block:Label}
+  						<span class="say">{line}</span>
+  					</li>
+  					{/block:Lines}
+  				</ol>
+  				{/block:Chat}
+
+  				{block:Audio}
+  				{AudioEmbed}
+  				{block:Caption}
+  				<div class="first clearfix">
+  				{Caption}
+  				</div>
+  				{/block:Caption}
+  				{/block:Audio}
+
+  				{block:Video}
+  				{VideoEmbed-500}
+  				{block:Caption}
+  				<div class="first">
+  				{Caption}
+  				</div>
+  				{/block:Caption}
+  				{/block:Video}
+
+  				{block:Link}
+  				<h2><a href="{URL}" {Target}>{Name}</a></h2>
+  				{block:Description}
+  				<div class="first">
+  				{Description}
+  				</div>
+  				{/block:Description}
+  				{block:Link}
+
+  				{block:Photoset}
+  					{Photoset}
+  					{block:Caption}
+  						<div class="first">
+  						{Caption}
+  						</div>
+  					{/block:Caption}
+  				{/block:Photoset}
+
+  				{block:Answer}
+  					<div class="question">
+  						<div class="asker">{Asker}</div>
+  						<div class="asker-question">{Question}</div>
+  							<img src="{AskerPortaitURL-96}" alt="Asker's avatar">
+  					</div>
+  					{block:Answerer}
+  						 <div class="answer"><div class="answerer">
+  						 	{Answerer}
+  						 </div>
+  						 <div class="answerer-answer">{Answer}</div>
+  						 	<img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="Answerer's avatar">
+  						</div>
+  					{/block:Answerer}
+  				{/block:Answer}
+
+  				<footer class="clearfix">
+  					<p class="readmore"><a href="{Permalink}" >...Read More</a></p>
+  					<ul>
+  						{block:HasTags}
+  						<li>
+							{block:Tags}
+							<a href="{TagURL}">#{Tag}</a>
+							{block:Tags}
+  						</li>
+  						{block:HasTags}
+  					</ul>
+  					<div class="divider clearfix"></div>
+  				</footer>
+
+  			</article>
+  		{/block:Posts}
+
+  		{block:Pagination}
+  		<section class="pagination">
+  			{block:PreviousPage}
+  				<a href="{PreviousPage}">Prev Page</a>
+  			{/block:PreviousPage}
+
+  			{block:NextPage}
+  				<a href="{NextPage}">Next Page</a>
+  			{/block:NextPage}
+  		</section>
+  		{/block:Pagination}
+
+  		<footer class="end clearfix">
+  			<p class="copyright">{CopyrightYears} {Title}</p>
+  		</footer>
+		</main>
+
+    {block:IfEnableTwitterFeed}
+    {block:Twitter}
+    <script type="text/javascript">
+        function recent_tweets(data) {
+          for (i=0; i<data.length; i++) {
+            document.getElementById("tweets").innerHTML =
+            document.getElementById("tweets").innerHTML +
+            '<a href="http://twitter.com/{TwitterUsername}/status/' +
+            (data[i].id_str ? data[i].id_str : data[i].id) +
+            '"><div class="content">' + data[i].text +
+            '</div></a>';
+          }
+          document.getElementById("twitter").style.display = 'block';
+        }
+    </script>
+    <script type="text/javascript" src="/tweets.js"></script>
+    {/block:Twitter}
+    {/block:IfEnableTwitterFeed}
+    {block:IfEnableGoogleAnalytics}
+    {block:IfGoogleAnalyticsID}
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{GoogleAnalyticsID}']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    {/block:IfGoogleAnalyticsID}
+    {/block:IfEnableGoogleAnalytics}
+  </body>
+</html>
