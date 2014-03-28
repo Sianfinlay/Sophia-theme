@@ -359,8 +359,10 @@
          .post footer ul {
          	margin-bottom: 40px;
          }
-
-         .end footer p {
+         .pagination {
+         	text-align: center;
+         }
+         .end {
          	margin: 28px auto 15px auto;
          	text-align: center;
          }
