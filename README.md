@@ -10,4 +10,6 @@ Progress Currently
 ---------------------------
 
 -	Theme can post post; text, audio, video, chat, quotes and links.
--	Basic design
+-	Basic design.
+-  review design choices
+-  added media queries to make it responsive
