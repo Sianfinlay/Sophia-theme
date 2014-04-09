@@ -26,7 +26,7 @@
     <!-- Development CSS -->
     	<!-- a link to the external css -->
     <!-- Font CSS -->
-    	<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:700|Volkhov:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:700|Droid+Serif' rel='stylesheet' type='text/css'>
     <!-- Fav Icons -->
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="apple-touch-icon" href="{PortraitURL-128}">
@@ -39,17 +39,7 @@
     <meta name="if:Enable Google Analytics" content="0" />
     <!-- Theme CSS -->
     <style>
-    	/*
-			title-color:			#000000;
-			hightlight-alt-color:	#c3700c;
-			background-color:		#ffffff;
-			heading-color:			#222222;
-			paragraphy-color:		#545454;
-			divider-color:			#ededed;
-			quote-div-color:		#cccccc;
-			post-dets-color:		#b8b8b8;
-			aside-p-color:			#8c8c8c;
-		*/
+
 
       /* ==========================================================================
          CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
@@ -116,7 +106,7 @@
          ========================================================================== */
 	      body {
 	      	font-size: 16px; // 1rem = 16px
-	      	font-family: 'Volkhov', times, serif; 
+	      	font-family: 'Droid Serif', times, serif; 
 	      	position:relative;
 	      	color: rgba(0, 0, 0, 1.0);
 	      }
@@ -130,29 +120,45 @@
 	      }
 	      h2 {
 	      	font-size: 3rem;
-	      	line-height: 38px;
+			line-height: 38px;
+			/* max-width: 400px; */
+			float: left;
+			clear: both;
+			max-width: 400px;
+			margin-bottom: 10px;
 	      }
 	      p {
-	      	font-size: 0.75rem;
-	      	font-family: 'Volkhov', times, serif; 
+	      	font-size: 1rem;
+	      	font-family: 'Droid Serif', times, serif; 
 	      	line-height: 25px;
 	      	word-spacing: 0.02875rem;
 	      }
+	      strong, b {
+	      	font-weight: bold;
+	      }
+	      em {
+	      	font-size: italic;
+	      }
 	      ol, ul {
 	      	clear: both;
-	      }
-	      ul {
-	      	
-	      }
+	      }	      
 	      blockquote {
-	      	padding-top: 25px;
-	      	padding-bottom: 20px;
+	      	border-left: ridge;
+	      	padding-left: 20px;
+			margin-top: 40px;
 	      	font-size: 1.5rem;
-	      	text-align: center;
 	      	font-style: italic;
 	      	clear: both;
 	      }
-
+	      .first blockquote p:first-child:first-letter {
+         	font-size: 0.75rem;
+         	line-height: 25px;
+         	text-transform: none;
+         	padding-top: 0;
+         	padding-right: 0;
+         	padding-bottom: 0;
+         	float: left;
+         }
 	      a {
 	      	color: rgba(0, 0, 0, 1.0);
 	      	font-style: bold;
@@ -161,6 +167,12 @@
 	      a:hover {
 	      	text-decoration: underline;
 	      }
+	      main > article.post.video > iframe {
+    		width: 100%;
+		 }
+		 main > article > iframe {
+    		width: 100%;
+		 }
 
 	      /* Header  */
 	      header h1 {
@@ -196,11 +208,7 @@
          	padding: 4px;
          	border: double 4px #000; 
          }
-         .about > p {
-         	margin: 15px 0 0 39px;
-         	max-width: 393.6px;
-         	float: left;
-         }
+
          nav {
          	clear: both;
          	margin: 36px 0 12px 0;
@@ -212,7 +220,7 @@
          	display: inline-block;
          	font-size: 0.6875rem;
          	text-transform: uppercase;
-         	padding: 0 55px 0 0;
+         	padding: 0 55px 10px 0;
          }
          nav > ul > li > a {
          	text-decoration: none;
@@ -236,28 +244,28 @@
 			box-shadow: 0 15px 0 rgb(74,74,74);
 			clear: both;
          }
-         main {
-         	
-         }
          main > article {
          	padding: 0 63px 0 63px;
          }
-         iframe {
-         	margin-left: 10%;
-         }
+         body > main > footer.end > p {
+    		font-size: 0.6rem;
+		 }
 
 	  /* ==========================================================================
          Post Layout
          ========================================================================== */
-         .post {
-         	
+         .post ul {
+	      	list-style: disc;
+	      }
+	      .post ol {
+	      	list-style: lower-roman; 
+	      }
+         body > main > article.post.text > div > blockquote > p > img {
+         	width: 100%;
          }
          .post header {
          	float: right;
          	clear: both;
-         }
-         .post.text {
-
          }
          .post.text header, .post.chat header {
          	float: right;
@@ -267,9 +275,8 @@
          	float: left;
          	clear: both;
          	max-width: 400px;
-         	margin-bottom: 10px;
+         	margin-bottom: 16px;
          }
-         
          .post p {
          	margin: 20px 0 0 0px;
          	clear: both;
@@ -279,35 +286,32 @@
          	line-height:15px;
          	text-transform: uppercase;
          	padding-top: 20px;
-         	padding-right: 6px;
+         	padding-right: 9px;
          	padding-bottom: 2px;
          	float: left;
-         }
-         .post.audio {
-
          }
          .post .audio .tumblr_audio_player {
          	max-width: 100%;
          	margin: 0 auto 0 auto;
          }
-         .post .video{
-         	
-         }
-         .post .chat ol, .post .chat ul{
-         	clear: both;
-         }
-         .post .chat .say{
-         	min-width: 200px;
-         }
+         .post.chat > ol > li {
+    		list-style: none;
+		 }
+		 .post.chat > ol > li > h3 {
+    		margin-top: 30px;
+		 }
          .post .quote {
          	clear: both;
          }
-         .post .quote blockquote {
+        
+         .quote-body p {
          	margin-top: 10px;
-         	font-size: 1.5rem;
+         	font-size: 1.78rem;
+			line-height: 35px;
+         	text-align: center;
          	font-style: italic;
          	clear: both;
-         } 
+         }
          .post .quote p .source {
          	float: right;
          	clear: both;
@@ -317,6 +321,9 @@
          }
          .post header .like_button, .post header .reblog_button {
          	float: left;
+         }
+         .post header ul {
+         	list-style: none;
          }
          .post header .like_button {
          	margin-left: 25px;
@@ -336,18 +343,20 @@
          .post footer {
          	margin: 23px 0 0 0; 
          }
-         .post footer .readmore {
+         .post footer ul {
+         	list-style: none;
+         }
+         body > main > article.post.text > div > p.read_more_container > a {
          	float: right;
          	margin-bottom: 10px;
-         }
-         .post footer .readmore li a {
          	color: rgba(74, 74, 74, 1.0);
          	font-size: 0.875rem;
          	text-decoration: none;
          }
-         .pots footer .readmore li a:hover {
+         .post.text > div > p.read_more_container > a:hover {
          	text-decoration: underline;
          }
+         
          .post footer ul li a {
          	font-size: 0.6875rem;
          	text-decoration: none;
@@ -361,7 +370,11 @@
          }
          .pagination {
          	text-align: center;
+         	margin-top: 40px;
          }
+         section.pagination > a {
+    		padding: 70px;
+		 }
          .end {
          	margin: 28px auto 15px auto;
          	text-align: center;
@@ -372,8 +385,32 @@
 	      @-ms-viewport { width: device-width; }
 	      @-o-viewport { width: device-width; }
 	      @viewport { width: device-width; }
-	      @media screen and (min-width:0px) {
-
+	      @media screen and (min-width:701px) {
+	      	.about > p {
+	         	margin: 15px 0 0 39px;
+	         	max-width: 393.6px;
+	         	float: left;
+         	}
+         	section.pagination > a {padding: 70px;}
+         	main > article {padding: 0 73px 0 73px;}
+	      }
+	      @media screen and (max-width:700px) {
+	      	.about > p {
+	      		max-width: 233.6px; 
+	      		padding: 15px 0 0 39px; 
+	      		float: left;
+	      	}
+	      	section.pagination > a {padding: 70px;}
+	      	main > article {padding: 0 73px 0 73px;}
+	      }
+	      @media screen and (max-width: 539px) {
+	      	h1 {font-size: 4rem;}
+	      	.about > p {
+	      		max-width: 100%; 
+	      		padding: 15px 0 0 0;
+	      	}
+	      	section.pagination > a {padding: 50px;}
+	      	main > article {padding: 0 43px 0 43px;}
 	      }
     </style>
     <!-- Custom CSS -->
@@ -438,13 +475,21 @@
   				{/block:Text}
 
   				{block:Quote}
-  				<blockquote class="{Length}">
-  				{Quote}
-  				</blockquote>
-  				{block:Source}
-  				<p class="source">- {Source}</p>
-  				{/block:Source}
-  				{/block:Quote}
+	  				<section class="clearfix">
+	  					<div class="quote-body">
+	  						<p class="{Length}">
+	  							&ldquo; {Quote} &rdquo;
+	  						</p>
+	  					</div>
+	  				
+	  					{block:Source}
+	  					<div class="quote-author">
+	  						<p>-{Source}</p>
+	  					</div>
+	  				
+	  					{/block:Source}
+	  				</section>
+				{/block:Quote}
 
   				{block:Chat}
   				{block:Title}
@@ -454,9 +499,9 @@
   					{block:Lines}
   					<li class="{Alt}">
   						{block:Label}
-  						<span>{Label}</span> 
+  						<h3>{Label}</h3> 
   						{/block:Label}
-  						<span class="say">{line}</span>
+  						<p class="say">{line}</p>
   					</li>
   					{/block:Lines}
   				</ol>
@@ -515,7 +560,7 @@
   				{/block:Answer}
 
   				<footer class="clearfix">
-  					<p class="readmore"><a href="{Permalink}" >...Read More</a></p>
+  					
   					<ul>
   						{block:HasTags}
   						<li>
