@@ -175,10 +175,7 @@
 		 }
 
 	      /* Header  */
-	      header h1 {
-	      	line-height: 7.25rem;
-	      	border-bottom: solid 1px rgb(151,151,151); 
-	      }
+	      
 	      .about p {
 	      	font-size: 0.6875rem;
 	      	line-height: 1.125rem;
@@ -197,6 +194,9 @@
          }
          header {
          	margin-top: 53px;
+         }
+         header > h1 > a:hover {
+         	text-decoration: none;
          }
          .about {
          	padding: 0 63px 0 63px;
@@ -386,6 +386,10 @@
 	      @-o-viewport { width: device-width; }
 	      @viewport { width: device-width; }
 	      @media screen and (min-width:701px) {
+	      	header h1 {
+	      	line-height: 6.25rem;
+	      	border-bottom: solid 1px rgb(151,151,151); 
+	      	}
 	      	.about > p {
 	         	margin: 15px 0 0 39px;
 	         	max-width: 393.6px;
@@ -395,6 +399,10 @@
          	main > article {padding: 0 73px 0 73px;}
 	      }
 	      @media screen and (max-width:700px) {
+	      	header h1 {
+	      	line-height: 6.25rem;
+	      	border-bottom: solid 1px rgb(151,151,151); 
+	      	}
 	      	.about > p {
 	      		max-width: 233.6px; 
 	      		padding: 15px 0 0 39px; 
@@ -404,7 +412,8 @@
 	      	main > article {padding: 0 73px 0 73px;}
 	      }
 	      @media screen and (max-width: 539px) {
-	      	h1 {font-size: 4rem;}
+	      	h1 {font-size: 3.6rem;}
+	      	header h1 {line-height: 4.25rem; border-bottom: solid 1px rgb(151,151,151); }
 	      	.about > p {
 	      		max-width: 100%; 
 	      		padding: 15px 0 0 0;
@@ -421,7 +430,7 @@
   <body>
   	
   	<header>
-  		<h1>{Title}</h1>
+  		<a href="/"><h1>{Title}</h1></a>
   		<section class="about clearfix">
   			<img src="{PortraitURL-128}" alt="{Title}" class="avatar">
   			{block:Description}
