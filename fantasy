@@ -108,11 +108,13 @@
 	      	font-size: 16px; // 1rem = 16px
 	      	font-family: 'Droid Serif', times, serif; 
 	      	position:relative;
-	      	color: rgba(0, 0, 0, 1.0);
+	      	color: rgba(34, 47, 56, 1);
 	      }
 	      h1, h2, h3, h4, h5, h6 {
 	      	font-family: 'Old Standard TT', times, serif;
-	      	color: rgba(0, 0, 0, 1.0);
+	      	color: rgba(34, 47, 56, 1);
+	      	text-transform: capitalize; 
+	      	font-weight: 700;
 	      }
 	      h1 {
 	      	font-size: 6rem;
@@ -120,18 +122,22 @@
 	      }
 	      h2 {
 	      	font-size: 3rem;
-			line-height: 38px;
-			/* max-width: 400px; */
+			line-height: 45px;
 			float: left;
 			clear: both;
-			max-width: 400px;
-			margin-bottom: 10px;
+			max-width: 650px;
+			margin-bottom: 20px;
 	      }
 	      p {
-	      	font-size: 1rem;
+	      	font-size: 1.1rem;
 	      	font-family: 'Droid Serif', times, serif; 
 	      	line-height: 25px;
 	      	word-spacing: 0.02875rem;
+	      	opacity: 0.9;
+	      	-webkit-hyphens: auto;
+ 			-moz-hyphens: auto;
+  			-ms-hyphens: auto;
+  			hyphens: auto;
 	      }
 	      strong, b {
 	      	font-weight: bold;
@@ -144,14 +150,15 @@
 	      }	      
 	      blockquote {
 	      	border-left: ridge;
-	      	padding-left: 20px;
+	      	padding-left: 15px;
 			margin-top: 40px;
+			margin-left: 30px;
 	      	font-size: 1.5rem;
 	      	font-style: italic;
 	      	clear: both;
 	      }
 	      .first blockquote p:first-child:first-letter {
-         	font-size: 0.75rem;
+         	font-size: 1.1rem;
          	line-height: 25px;
          	text-transform: none;
          	padding-top: 0;
@@ -160,7 +167,7 @@
          	float: left;
          }
 	      a {
-	      	color: rgba(0, 0, 0, 1.0);
+	      	color: rgba(35, 56, 69, 0.7);
 	      	font-style: bold;
 	      	text-decoration: none;
 	      }
@@ -169,33 +176,34 @@
 	      }
 	      main > article.post.video > iframe {
     		width: 100%;
-		 }
-		 main > article > iframe {
+		  }
+		  main > article > iframe {
     		width: 100%;
-		 }
+		  }
 
 	      /* Header  */
 	      
 	      .about p {
-	      	font-size: 0.6875rem;
+	      	font-size: 0.8875rem;
 	      	line-height: 1.125rem;
 	      }
-      /* ==========================================================================
+      /* ============================================================
          Base Layout
-         ========================================================================== */
+         ============================================================ */
          header, main {
          	margin-left: auto;
          	margin-right: auto;
          }
          header h1, .about, nav ul, main {
-         	max-width: 700px;
+         	max-width: 900px;
          	margin-left: auto;
          	margin-right: auto;
          }
          header {
          	margin-top: 53px;
+         	margin-bottom: 20px;
          }
-         header > h1 > a:hover {
+         header > a:hover {
          	text-decoration: none;
          }
          .about {
@@ -220,7 +228,7 @@
          	display: inline-block;
          	font-size: 0.6875rem;
          	text-transform: uppercase;
-         	padding: 0 55px 10px 0;
+         	padding: 0 27.5px 10px 27.5px;
          }
          nav > ul > li > a {
          	text-decoration: none;
@@ -232,16 +240,16 @@
 			width: 100%;
 			height: 1px;
 			background: rgb(74,74,74);
-			box-shadow: 0 15px 0 rgb(74,74,74);
+			box-shadow: 0 15px 0.5px rgba(74,74,74,0.8);
 			clear: both;
          }
          .divider {
-         	margin: 22px auto 20px auto;
+         	margin: 122px auto 30px auto;
          	bottom: 1px;
 			max-width: 273px;
 			height: 1px;
-			background: rgb(74,74,74);
-			box-shadow: 0 15px 0 rgb(74,74,74);
+			background: rgba(74,74,74,0.4);
+			box-shadow: 0 15px 0.5px rgba(74,74,74,0.3);
 			clear: both;
          }
          main > article {
@@ -274,7 +282,7 @@
          .post.text h2, .post.chat h2 {
          	float: left;
          	clear: both;
-         	max-width: 400px;
+         	max-width: 600px;
          	margin-bottom: 16px;
          }
          .post p {
@@ -341,7 +349,7 @@
          	text-decoration: underline;
          }
          .post footer {
-         	margin: 23px 0 0 0; 
+         	margin: 53px 0 0 0; 
          }
          .post footer ul {
          	list-style: none;
@@ -370,14 +378,36 @@
          }
          .pagination {
          	text-align: center;
-         	margin-top: 40px;
+         	margin-top: 90px;
+         	clear: both;
          }
          section.pagination > a {
-    		padding: 70px;
+         	margin-bottom: 50px;
+         	padding: 10px;
+         	border: double rgba(54, 71, 74, 0.5);
+         	border-radius: 10px;
+         }
+         section.pagination > a:hover {
+         	text-decoration: none; 
+         	color: rgba(255, 255, 255, 1.0);
+         	margin-bottom: 50px;
+         	padding: 10px;
+         	background-color: rgba(54, 71, 74, 0.5);
+         	border: double rgba(255, 255, 255, 1.0);
+         	border-radius: 10px;
+         }
+		 section.pagination > a:first-child {
+		 	margin-left: 70px;
+		 	float: left;
+		 }
+		 section.pagination > a:last-child {
+		 	margin-right: 70px;
+		 	float: right;
 		 }
          .end {
-         	margin: 28px auto 15px auto;
+         	margin: 48px auto 15px auto;
          	text-align: center;
+         	clear: both;
          }
       /* ==========================================================================
          Media Queries
@@ -385,18 +415,26 @@
 	      @-ms-viewport { width: device-width; }
 	      @-o-viewport { width: device-width; }
 	      @viewport { width: device-width; }
-	      @media screen and (min-width:701px) {
+
+	      @media screen and (min-width:900px) {
 	      	header h1 {
 	      	line-height: 6.25rem;
 	      	border-bottom: solid 1px rgb(151,151,151); 
 	      	}
 	      	.about > p {
-	         	margin: 15px 0 0 39px;
-	         	max-width: 393.6px;
+	         	padding: 15px 0 0 39px;
+	         	max-width: 593.6px;
+	         	float: right;
+         	}
+         	
+         	main > article {padding: 0 73px 0 73px;}
+	      }
+	      @media screen and (max-width: 899px){
+	      	.about > p {
+	         	padding: 15px 0 0 39px;
+	         	max-width: 493.6px;
 	         	float: left;
          	}
-         	section.pagination > a {padding: 70px;}
-         	main > article {padding: 0 73px 0 73px;}
 	      }
 	      @media screen and (max-width:700px) {
 	      	header h1 {
@@ -404,11 +442,11 @@
 	      	border-bottom: solid 1px rgb(151,151,151); 
 	      	}
 	      	.about > p {
-	      		max-width: 233.6px; 
+	      		max-width: 333.6px; 
 	      		padding: 15px 0 0 39px; 
 	      		float: left;
 	      	}
-	      	section.pagination > a {padding: 70px;}
+	      	
 	      	main > article {padding: 0 73px 0 73px;}
 	      }
 	      @media screen and (max-width: 539px) {
@@ -418,7 +456,7 @@
 	      		max-width: 100%; 
 	      		padding: 15px 0 0 0;
 	      	}
-	      	section.pagination > a {padding: 50px;}
+	      	
 	      	main > article {padding: 0 43px 0 43px;}
 	      }
     </style>
@@ -478,14 +516,14 @@
 				{block:Title}
 				<h2>{Title}</h2>
 				{/block:Title}
-				<div class="first">
+				<div class="first hyphenate">
 				{Body}
 				</div>
   				{/block:Text}
 
   				{block:Quote}
 	  				<section class="clearfix">
-	  					<div class="quote-body">
+	  					<div class="quote-body hyphenate">
 	  						<p class="{Length}">
 	  							&ldquo; {Quote} &rdquo;
 	  						</p>
@@ -519,7 +557,7 @@
   				{block:Audio}
   				{AudioEmbed}
   				{block:Caption}
-  				<div class="first clearfix">
+  				<div class="first clearfix hyphenate">
   				{Caption}
   				</div>
   				{/block:Caption}
@@ -528,7 +566,7 @@
   				{block:Video}
   				{VideoEmbed-500}
   				{block:Caption}
-  				<div class="first">
+  				<div class="first hyphenate">
   				{Caption}
   				</div>
   				{/block:Caption}
@@ -546,7 +584,7 @@
   				{block:Photoset}
   					{Photoset}
   					{block:Caption}
-  						<div class="first">
+  						<div class="first hyphenate">
   						{Caption}
   						</div>
   					{/block:Caption}
@@ -634,5 +672,6 @@
     </script>
     {/block:IfGoogleAnalyticsID}
     {/block:IfEnableGoogleAnalytics}
+    <script type="text/javascript" src="http://static.tumblr.com/udzjjyf/K5Pn3zat9/hyphenate.js"></script>
   </body>
 </html>
